@@ -48,7 +48,8 @@ soundCommand : LParen SoundCommand SoundName soundParameters SoundRParen ;
 soundParameters : soundParameter* ;
 soundParameter
     : SoundLParen
-    ( FromSoundParam  SoundName SoundNameRParen
+    ( BlockSoundParam  BooleanValue BooleanRParen
+    | FromSoundParam  SoundName SoundNameRParen
     | GainSoundParam NumberValue NumberRParen
     )
     ;

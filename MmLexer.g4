@@ -71,6 +71,7 @@ SoundWS : WS -> skip;
 SoundRParen : RParen -> popMode ;
 SoundLParen : LParen ;
 
+FromSoundParam : 'block' -> pushMode(BooleanTypeMode) ;
 FromSoundParam : 'from' -> pushMode(SoundNameTypeMode) ;
 GainSoundParam : 'gain' -> pushMode(NumberTypeMode) ;
 SoundName : NameString  ;
@@ -119,7 +120,7 @@ FullNameValue : NameString (' ' NameString)* ;
 mode BoolenTypeMode ;
 BooleanWS : WS -> skip;
 BooleanRParen : RParen -> popMode ; 
-BooleanValue :'true' | 'false' ;
+BooleanValue : 'true' | 'True' | 'false' | 'False' ;
 
 mode SoundNameTypeMode ;
 SoundNameWS : WS -> skip;
