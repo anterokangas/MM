@@ -2,7 +2,7 @@ lexer grammar MmLexer ;
 
 /************************************
  * Manuscript Manager
- * Lexical analyser for *.mm files
+ * Lexical Analyser of *.mm files
  ************************************/
 
 Comment : '(*' .*? '*)' -> skip; 
