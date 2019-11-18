@@ -10,10 +10,10 @@ options {tokenVocab=MmLexer;}
 
 mm
     :
-    ( Comment 
-    | String
-    | command
-    | call   
+    ( Comment   # ohitetaan
+    | String    # kertoja
+    | command   # määrittelykomento vaiko definition?
+    | call      # kutsu
     )*
     ;
 
