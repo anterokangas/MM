@@ -3,7 +3,7 @@ parser grammar MmParser ;
 options {tokenVocab=MmLexer;}
 
 /************************
- * Manuscript MAnager
+ * Manuscript Manager
  * version 2.0
  * Parser of *.mm files
  ************************/
