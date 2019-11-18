@@ -2,6 +2,11 @@ parser grammar MmParser ;
 
 options {tokenVocab=MmLexer;}
 
+/************************
+ * Manuscript MAnager
+ * Parser of *.g4 files
+ ************************/
+ 
 mm
     :
     ( Comment 
