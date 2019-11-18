@@ -4,7 +4,8 @@ options {tokenVocab=MmLexer;}
 
 /************************
  * Manuscript MAnager
- * Parser of *.g4 files
+ * version 2.0
+ * Parser of *.mm files
  ************************/
 
 mm

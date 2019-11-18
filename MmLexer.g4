@@ -2,10 +2,18 @@ lexer grammar MmLexer ;
 
 /************************************
  * Manuscript Manager
+ * version 2.0
  * Lexical Analyser of *.mm files
  ************************************/
 
-Comment : '(*' .*? '*)' -> skip; 
+Comment 
+    : 
+    ( '(*' .*? '*)'
+    | '(#' .*? '#)'
+    | '(%' .*? '%)'
+    ) -> skip
+    ;
+
 WS : [ \t\r\n]+ -> skip ;
 
 LParen : '(' -> pushMode(CommandMode);
@@ -22,8 +30,8 @@ String
     | QQString 
     | NameString 
     | FileName 
-    | SimpleString
-    )+ 
+    | SimpleString 
+    )+
     ;
 
 mode CommandMode ;
@@ -35,7 +43,7 @@ WaitCommand      : 'Wait'      -> mode(WaitCommandMode) ;
 SoundCommand     : 'Sound'     -> mode(SoundCommandMode) ;
 GroupCommand     : 'Group'     -> mode(GroupCommandMode) ;
 PlayCommand      : 'Play'      -> mode(PlayCommandMode) ;
-SettingsCommand  : 'Settings'  -> mode(PlayCommandMode) ;
+SettingsCommand  : 'Settings'  -> mode(SettingsCommandMode) ;
 Call             : NameString -> mode(CallMode) ;
 
 mode RoleCommandMode ;
@@ -90,7 +98,7 @@ SettingsRParen : RParen -> popMode ;
 SettingsLParen : LParen ;
 
 DefaultLanguageSettingsParam : 'defaultLanguage' -> pushMode(LanguageTypeMode) ; 
-OutputSettingsParam : 'output' -> pushMode(LanguageTypeMode) ; 
+OutputSettingsParam : 'output' -> pushMode(SoundNameTypeMode) ; 
 
 mode CallMode ;
 CallWS : WS -> skip;
@@ -125,4 +133,4 @@ LanguageValue : 'fi' | 'en' | 'sv' | 'fr' ;
 
 mode StringMode ;
 StringRParen : RParen -> popMode ;
-StringValue : String ;
+StringValue : String (WS String)* ;
