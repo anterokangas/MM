@@ -90,6 +90,7 @@ SettingsRParen : RParen -> popMode ;
 SettingsLParen : LParen ;
 
 DefaultLanguageSettingsParam : 'defaultLanguage' -> pushMode(LanguageTypeMode) ; 
+OutputSettingsParam : 'output' -> pushMode(LanguageTypeMode) ; 
 
 mode CallMode ;
 CallWS : WS -> skip;

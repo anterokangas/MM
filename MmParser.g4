@@ -74,7 +74,8 @@ settingsCommand : LParen SettingsCommand settingsParameters SettingsRParen ;
 settingsParameters : settingsParameter* ;
 settingsParameter
     : SettingsLParen
-    ( DefaultLanguageSettingsParam LanguageValue SettingsRParen
+    ( DefaultLanguageSettingsParam LanguageValue LanguageRParen
+    | OutputSettingsParam SoundNameValue SoundNameRParen
     )
     ;
 
