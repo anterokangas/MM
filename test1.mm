@@ -1,0 +1,20 @@
+(* kommentti *)
+(Role Antero (pitch 0.5))
+(Role Tiina (pitch 1.1) (alias Kulta))
+(*)
+(Wait -- (delay 100))
+(Wait tauko (delay 300))
+(Sound Pam (file c:/pam.mp3))
+*)
+
+(Antero Moi vaan (SOUND AnteronMoi))
+
+(*
+(Play c:/pam.mp3)
+(Group ryhmä (members Antero Tiina Pam AnteronMoi))
+(ryhmä)
+(--) 
+(tauko)
+(tauko 400)
+(ryhmä Heippa hei)
+*)
