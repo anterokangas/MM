@@ -1,5 +1,10 @@
 lexer grammar MmLexer ;
 
+/**
+ * Manuscript Manager
+ * Lexical analyser for *.mm files
+ */
+
 Comment : '(*' .*? '*)' -> skip; 
 WS : [ \t\r\n]+ -> skip ;
 
