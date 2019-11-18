@@ -6,7 +6,7 @@ options {tokenVocab=MmLexer;}
  * Manuscript MAnager
  * Parser of *.g4 files
  ************************/
- 
+
 mm
     :
     ( Comment 
@@ -47,7 +47,7 @@ soundCommand : LParen SoundCommand SoundName soundParameters SoundRParen ;
 soundParameters : soundParameter* ;
 soundParameter
     : SoundLParen
-    ( FromSoundParam  SoundName (SoundNameWS SoundName)* SoundNameRParen
+    ( FromSoundParam  SoundName SoundNameRParen
     | GainSoundParam NumberValue NumberRParen
     )
     ;
@@ -56,7 +56,7 @@ groupCommand : LParen GroupCommand GroupName groupParameters GroupRParen ;
 groupParameters : groupParameter* ;
 groupParameter
     : GroupLParen
-    ( MembersGroupParam SoundNameValue SoundNameRParen
+    ( MembersGroupParam SoundNameValue* SoundNameRParen
     | GainSoundParam NumberValue NumberRParen
     )
     ;
@@ -78,6 +78,6 @@ settingsParameter
     )
     ;
 
-call : LParen Call CallString callParameters CallRParen ;
+call : LParen Call CallString? callParameters CallRParen ;
 callParameters: callParameter* ;
 callParameter : CallLParen StringValue StringRParen ;

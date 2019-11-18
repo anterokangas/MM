@@ -113,7 +113,7 @@ BooleanRParen : RParen -> popMode ;
 BooleanValue :'true' | 'false' ;
 
 mode SoundNameTypeMode ;
-SoundNameWS : WS ;
+SoundNameWS : WS -> skip;
 SoundNameRParen : RParen -> popMode ;
 SoundNameValue : FileName | NameString ;
 
